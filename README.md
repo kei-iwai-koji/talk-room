@@ -1,24 +1,84 @@
-# README
+# データベース設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## usersテーブル
 
-* Ruby version
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|e_mail|string|null: false, unique: true|
+|comment|text| |
+|twitter_id|string| |
+|team|string| |
 
-* System dependencies
+### Association
+- has_many :members
+- has_many :rooms, through: :members
+- has_many :talks
+- has_many :goods
+- has_many :bads
 
-* Configuration
 
-* Database creation
+## membersテーブル
 
-* Database initialization
+|Column|Type|Options|
+|------|----|-------|
+|user_id|reference|foreign_key: true|
+|room_id|reference|foreign_key: true|
 
-* How to run the test suite
+### Association
+- belongs_to :user
+- belongs_to :room
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## roomsテーブル
 
-* ...
+|Column|Type|Options|
+|------|----|-------|
+|title|string|null: false|
+|detail|text| |
+|owner|reference|foreign_key: true|
+
+### Association
+- has_many :members
+- has_many :users, through: :members
+- has_many :talks
+
+
+## talksテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user_id|reference|foreign_key: true|
+|room_id|reference|foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :room
+- has_many :goods
+- has_many :bads
+
+
+## goodsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|reference|foreign_key: true|
+|talk_id|reference|foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :talk
+
+
+## badsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|reference|foreign_key: true|
+|talk_id|reference|foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :talk
