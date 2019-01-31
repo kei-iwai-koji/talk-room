@@ -1,0 +1,57 @@
+.main {
+  &__side {
+    width: 25%;
+    background-color: $main;
+    height: calc(100vh - 3rem);
+    color: $font;
+    float: left;
+    border-top: 0.3rem dotted $base;
+    &__user {
+      @include side-box(5rem);
+      padding: 1rem;
+      white-space: nowrap;
+      @include line(0.3rem);
+      &__avatar {
+        @include avatar(3rem);
+      }
+      &__name {
+        display: inline-block;
+      }
+    }
+    &__room {
+      @include side-box(calc((100vh - 8rem) / 2));
+      @include line(0.3rem);
+      &__box {
+        padding: 1rem;
+        @include link();
+        &__name {
+          font-size: 1.5rem;
+        }
+        &__text {
+          font-size: 1rem;
+          word-wrap: break-word;
+        }
+      }
+    }
+    &__member {
+      @include side-box(calc((100vh - 8rem) / 2));
+      white-space: nowrap;
+      &__top {
+        padding: 1rem;
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+      &__list {
+        padding: 1rem;
+        &__avatar {
+          @include avatar(1.5rem);
+        }
+        &__name {
+          padding-right: 1rem;
+          font-size: 1rem;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

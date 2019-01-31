@@ -1,0 +1,23 @@
+.header {
+  top: 0;
+  background-color: $main;
+  color: $font;
+  width: 100%;
+  line-height: 2rem;
+  vertical-align: middle;
+  text-align: center;
+  @include clearfix;
+  &__title {
+    @include header;
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+  }
+  &__btn {
+    @include header;
+    position: absolute;
+    right: 2rem;
+  }
+}
+.main {
+  @include clearfix;
+}
