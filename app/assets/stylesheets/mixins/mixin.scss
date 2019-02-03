@@ -29,6 +29,9 @@
 @mixin link() {
   &:hover {
     background-color: $opa;
+    text-decoration: none;
+    font-weight: bold;
+    color: $font;
   }
 }
 

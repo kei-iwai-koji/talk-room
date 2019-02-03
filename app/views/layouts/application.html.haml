@@ -15,7 +15,7 @@
     .header
       .header__title
         #{fa_icon 'paw'}MINE#{fa_icon 'paw'}
-      .header__btn
+      = link_to destroy_user_session_path, method: :delete, class: 'header__btn' do
         ログアウト
 
     .main
