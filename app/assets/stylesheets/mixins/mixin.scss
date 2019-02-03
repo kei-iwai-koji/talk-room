@@ -24,11 +24,15 @@
   display: inline-block;
   border: 0.1rem solid $in-color;
   box-shadow : 0 0 0 0.1rem $out-color;
+  margin-right: 0.5rem;
 }
 
 @mixin link() {
   &:hover {
     background-color: $opa;
+    text-decoration: none;
+    font-weight: bold;
+    color: $font;
   }
 }
 
