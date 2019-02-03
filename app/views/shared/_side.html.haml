@@ -1,8 +1,9 @@
 .main__side
   .main__side__user
-    = image_tag (current_user.avatar), class: "main__side__user__avatar"
-    .main__side__user__name
-      = current_user.name
+    = link_to edit_user_registration_path do
+      = image_tag (current_user.avatar), class: "main__side__user__avatar"
+      .main__side__user__name
+        = current_user.name
 
   .main__side__room
     .main__side__room__box
