@@ -1,8 +1,8 @@
 .main__side
   .main__side__user
-    = image_tag "valentine.jpg", class: "main__side__user__avatar"
+    = image_tag (current_user.avatar), class: "main__side__user__avatar"
     .main__side__user__name
-      useraaあああああああああああああああああああああああああああああああああ
+      = current_user.name
 
   .main__side__room
     .main__side__room__box

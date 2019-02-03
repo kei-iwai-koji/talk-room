@@ -2,6 +2,8 @@
   &__container {
     margin-left: 25%;
     background-color: $base;
+    background-image: url(aozora.jpg);
+    background-size: cover;
     &__body {
       height: calc(100vh - 8rem);
       overflow: scroll;

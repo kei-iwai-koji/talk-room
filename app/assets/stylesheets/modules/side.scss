@@ -6,11 +6,12 @@
     color: $font;
     float: left;
     border-top: 0.3rem dotted $base;
+    overflow: hidden;
     &__user {
-      @include side-box(5rem);
+      @include line(0.3rem);
+      @include side-box(5.3rem);
       padding: 1rem;
       white-space: nowrap;
-      @include line(0.3rem);
       &__avatar {
         @include avatar(3rem);
       }
