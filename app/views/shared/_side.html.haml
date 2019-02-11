@@ -1,6 +1,6 @@
 %aside.sidebar
   %section.user
-    = link_to edit_user_registration_path, class: "side-user" do
+    = link_to edit_user_path(current_user), class: "side-user" do
       = image_tag (current_user.avatar), class: "user__avatar"
       %span.user__name
         = current_user.name
