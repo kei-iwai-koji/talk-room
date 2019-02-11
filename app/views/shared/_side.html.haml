@@ -1,48 +1,24 @@
-.main__side
-  .main__side__user
-    = link_to edit_user_registration_path do
-      = image_tag (current_user.avatar), class: "main__side__user__avatar"
-      .main__side__user__name
+%aside.sidebar
+  %section.user
+    = link_to edit_user_registration_path, class: "side-user" do
+      = image_tag (current_user.avatar), class: "user__avatar"
+      %span.user__name
         = current_user.name
 
-  .main__side__room
-    .main__side__room__box
-      .main__side__room__box__name
-        ssss
-      .main__side__room__box__text
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab
-    .main__side__room__box
-      .main__side__room__box__name
-        ssss
-      .main__side__room__box__text
-        aaaaaaa
-    .main__side__room__box
-      .main__side__room__box__name
-        ssss
-      .main__side__room__box__text
-        aaaaaaadddddddddddddddddddddd
-    .main__side__room__box
-      .main__side__room__box__name
-        ssss
-      .main__side__room__box__text
-        aaaaaaa
+  %section.room
+    %ul.room-list
+      %li
+        %span.name
+          ssss
+        %p.text
+          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab
 
-  .main__side__member
-    .main__side__member__top
+
+  %section.member
+    %h3.member__top
       * Room メンバー
-    .main__side__member__list
-      = image_tag "valentine.jpg", class: "main__side__member__list__avatar"
-      .main__side__member__list__name
+    %ul.member__list
+      = image_tag "valentine.jpg", class: "member__list__avatar"
+      %p.member__list__name
         ddddffffffffffffffffffffffffffffffffff
-    .main__side__member__list
-      = image_tag "valentine.jpg", class: "main__side__member__list__avatar"
-      .main__side__member__list__name
-        ddddffffffffffffffffffffffffffffffffff
-    .main__side__member__list
-      = image_tag "valentine.jpg", class: "main__side__member__list__avatar"
-      .main__side__member__list__name
-        ddddffffffffffffffffffffffffffffffffff
-    .main__side__member__list
-      = image_tag "valentine.jpg", class: "main__side__member__list__avatar"
-      .main__side__member__list__name
-        ddddffffffffffffffffffffffffffffffffff
+

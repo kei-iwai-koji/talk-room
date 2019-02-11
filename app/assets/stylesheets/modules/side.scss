@@ -1,57 +1,71 @@
-.main {
-  &__side {
-    width: 25%;
-    background-color: $main;
-    height: calc(100vh - 3rem);
-    color: $font;
-    float: left;
-    border-top: 0.3rem dotted $base;
-    overflow: hidden;
-    &__user {
-      @include line(0.3rem);
-      @include side-box(5.3rem);
-      padding: 1rem;
-      white-space: nowrap;
-      &__avatar {
-        @include avatar(3rem);
-      }
-      &__name {
-        display: inline-block;
+.sidebar {
+  width: 25%;
+  background-color: $main;
+  height: calc(100vh - 3rem);
+  color: $font;
+  float: left;
+  border-top: 0.3rem dotted $base;
+  overflow: hidden;
+  .user {
+    @include line(0.3rem);
+    @include side-box(5.3rem);
+    padding: 1rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    .side-user {
+      color: $font;
+      &:hover {
+        text-decoration: none;
+        color: $opa;
+        font-size: 1.1rem;
       }
     }
-    &__room {
-      @include side-box(calc((100vh - 8rem) / 2));
-      @include line(0.3rem);
-      &__box {
+    &__avatar {
+      @include avatar(3rem);
+    }
+    &__name {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
+  .room {
+    @include side-box(calc((100vh - 8rem) / 2));
+    @include line(0.3rem);
+    .room-list {
+      list-style: none;
+      padding: 0;
+      li {
         padding: 1rem;
         @include link();
-        &__name {
+        .name {
           font-size: 1.5rem;
         }
-        &__text {
+        .text {
           font-size: 1rem;
           word-wrap: break-word;
         }
       }
     }
-    &__member {
+  }
+  .member {
+    white-space: nowrap;
+    &__top {
+      padding: 1rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+    &__list {
       @include side-box(calc((100vh - 8rem) / 2));
-      white-space: nowrap;
-      &__top {
-        padding: 1rem;
-        font-size: 1.4rem;
-        font-weight: bold;
+      padding: 1rem;
+      &__avatar {
+        @include avatar(1.5rem);
       }
-      &__list {
-        padding: 1rem;
-        &__avatar {
-          @include avatar(1.5rem);
-        }
-        &__name {
-          padding-right: 1rem;
-          font-size: 1rem;
-          display: inline-block;
-        }
+      &__name {
+        padding-right: 1rem;
+        font-size: 1rem;
+        display: inline-block;
       }
     }
   }
