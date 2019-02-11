@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title TalkRoom
+    %title MINE
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -12,8 +12,8 @@
 
 
   %body
-    .header
-      .header__title
+    %header.header
+      %h1.header__title
         #{fa_icon 'paw'}MINE#{fa_icon 'paw'}
       = link_to destroy_user_session_path, method: :delete, class: 'header__btn' do
         ログアウト
